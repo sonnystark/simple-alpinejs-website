@@ -1,18 +1,95 @@
 :root {
+  /*COLOR VARIABLES*/
   --bg: #111111;
-  --card: #071032;
-  --accent-dark: #a01b1b;
+  --accent-dark: rgba(255, 20, 147);
   --accent-light: #ed7d31;
   --muted: #94a3b8;
   --text: #e6eef8;
+
+  /*FONTS*/
+  @font-face {
+    font-family: Edges;
+    src: url('./assets/fonts/Edges.ttf') format('ttf');
+  }
+
+  @font-face {
+    font-family: Geomanist;
+    src: url('./assets/fonts/geomanist-regular-webfont.woff2') format('woff2');
+  }
+
+  /*GRAPHICS*/
   --bg-image: url('./assets/img/Cafe-Westen-in-Leipzig-Lindenau-1536x1152.jpg');
+
+  /*SHADOWS*/
+  --drop-shadow: drop-shadow(5px 7px 30px rgba(255, 20, 147, 0.8));
+  --container-shadow: 1px 1px 60px 2px rgba(255, 20, 147, 0.3);
 }
 
+/*MINIMAL RESET*/
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
+
+/*TYPOGRAPHY*/
+h1 {
+  font-family: Edges;
+  font-size: 4rem;
+  margin: 2rem auto 1.2rem auto;
+  white-space: unset;
+  line-height: 1em;
+  letter-spacing: 0.1rem;
+  max-width: 17ch;
+  text-transform: uppercase;
+}
+h1:has(span) span {
+  color: var(--accent-dark);
+}
+
+h2 {
+  font-family: Edges;
+  font-size: 3.2rem;
+  margin: 2rem 0px 1rem 0px;
+  line-height: 1em;
+  letter-spacing: 0.2rem;
+}
+
+h3 {
+  font-family: Edges;
+  font-size: 1.6rem;
+  margin: 2rem 0px 1rem 0px;
+  letter-spacing: 0.1rem;
+}
+
+header p {
+  border-bottom: 1px solid var(--text);
+  border-top: 1px solid var(--text);
+  padding: 1rem 0px 1rem 0px;
+  margin: auto;
+  max-inline-size: 30ch;
+  word-wrap: initial;
+}
+
+p {
+  font-size: 1.4rem;
+}
+
+a {
+  text-decoration: none;
+  color: var(--accent-dark);
+  font-weight: bold;
+}
+
+a:hover {
+  color: var(--text);
+}
+
+p:has(span) span {
+  font-weight: bold;
+}
+
+/*GLOBAL*/
 html,
 body {
   height: 100%;
@@ -21,13 +98,11 @@ body {
 body {
   margin: 0;
   font-family:
-    system-ui,
-    -apple-system,
+    Geomanist,
     Segoe UI,
     Roboto,
     'Helvetica Neue',
     Arial;
-  /*background-color: var(--bg);*/
   background: top var(--bg) var(--bg-image);
   background-size: cover;
   background-attachment: fixed;
@@ -41,7 +116,7 @@ body {
   height: auto;
   display: block;
   padding-bottom: 2rem;
-  filter: drop-shadow(5px 7px 30px deeppink);
+  filter: var(--drop-shadow);
 }
 
 img {
@@ -49,36 +124,13 @@ img {
   display: block;
 }
 
-h1 {
-  font-size: 2rem;
-  margin: 1rem 0px 1rem 0px;
+header {
   text-align: center;
-  text-transform: uppercase;
-}
-
-h2 {
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
-  text-align: center;
-}
-
-a {
-  text-decoration: none;
-  color: var(--accent-light);
-  font-weight: bold;
-}
-
-a:hover {
-  color: var(--text);
-}
-
-p:has(span) span {
-  font-weight: bold;
 }
 
 .container {
   background: rgba(20, 20, 20, 0.75);
-  box-shadow: 1px 1px 60px 2px rgb(255, 20, 147, 0.3);
+  box-shadow: var(--container-shadow);
   border-radius: 1rem;
   max-width: 720px;
   margin: 0 auto;
@@ -92,6 +144,7 @@ p:has(span) span {
   border-radius: 8px;
   overflow: hidden;
 }
+
 .summary {
   width: 100%;
   text-align: left;
@@ -105,26 +158,72 @@ p:has(span) span {
   align-items: center;
   cursor: pointer;
 }
+
+/*button:hover {
+  background-color: var(--accent-dark);
+  color: var(--bg);
+}*/
+
 .chev {
   transition: transform 0.2s ease;
   margin-left: 0.5rem;
-  color: var(--accent-light);
+  color: var(--accent-dark);
 }
+
 .chev.open {
   transform: rotate(90deg);
 }
+
 .details {
   padding: 1rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.02);
+  border-top: 0.1px solid var(--accent-dark);
   color: var(--muted);
 }
 
 .details ul {
   list-style: none;
+  margin-bottom: 2rem;
+}
+
+ul li {
+  margin-bottom: 0.5rem;
+}
+
+.icon-grid {
+  width: 100%;
+  display: grid;
+  grid-template-rows: repeat(1fr);
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin: 2rem 0 2rem 0;
+}
+.icon-grid img {
+  color: var(--accent-dark);
+  height: 150px;
+  border: 3px solid var(--accent-dark);
+  border-radius: 10px;
+  padding: 1rem 0 1rem 0;
+}
+.icon-grid img:hover {
+  border: 3px solid var(--text);
 }
 
 button {
-  font-size: 1.3rem;
+  font-family: Edges;
+  font-size: 1.4rem;
+}
+
+/*button:focus {
+  background-color: var(--accent-dark);
+}*/
+
+small {
+  display: inline-block;
+}
+
+small:has(span) span {
+  color: var(--accent-dark);
+  font-size: 1.2em;
 }
 
 footer {

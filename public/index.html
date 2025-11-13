@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Cafe Westen - Das Kult-Café in Leipzig-Lindenau</title>
     <link rel="stylesheet" href="styles.css" />
-    <!-- Bundled client (created by `bun build src/main.ts --outdir=public/js`) -->
     <script type="module" src="/js/main.js" defer></script>
   </head>
   <body>
@@ -17,13 +16,27 @@
           src="./assets/img/cafe_westen-scaled-1.jpg"
           alt=""
         />
-        <h1>Das Kult-Café am Lindenauer Markt</h1>
+        <h1>Das Kult-Café am <span>Lindenauer Markt</span></h1>
         <p>
           Weitere Informationen finden Sie auch auf
           <a href="#" target="_blank">unserer Facebook-Seite</a>.
         </p>
-        <p>Wir freuen uns auf Euren Besuch!</p>
+        <h2>Wir freuen uns auf Euren Besuch!</h2>
       </header>
+      <section class="icon-grid">
+        <div>
+          <img src="./assets/icons/food.svg" alt="" />
+        </div>
+        <div>
+          <img src="./assets/icons/beer.svg" alt="" />
+        </div>
+        <div>
+          <img src="./assets/icons/billiard.svg" alt="" />
+        </div>
+        <div>
+          <img src="./assets/icons/music.svg" alt="" />
+        </div>
+      </section>
       <!-- Alpine directives ONLY for accordion toggles -->
       <section class="accordion">
         <div class="item" x-data="{ open: false }">
@@ -36,12 +49,12 @@
             <span class="chev" :class="{ 'open': open }">▸</span>
           </button>
           <div class="details" x-show="open" x-transition style="display: none">
-            <h2>Mit dem Auto:</h2>
+            <h3>Mit dem Auto</h3>
             <p>
               Anfahrt über die B87 (Lützner Straße) bis Odermannstraße (rechts).
             </p>
 
-            <h2>Mit der TRAM:</h2>
+            <h3>Mit der Tram</h3>
             <p>
               Linie 7 (Richtung Böhlitz-Ehrenberg) bis Lindenauer Markt. Linie 8
               (Richtung Grünau-Nord) bis Lindenauer Markt. Linie 15 (Richtung
@@ -88,12 +101,12 @@
               <li>Sonntag: 18:00 - 03:00 Uhr</li>
             </ul>
             <small>
-              &#8505; | Unsere Küche öffnet Montag bis Freitag von 17.30h bis
-              23h, am Wochenende ab 18h.
+              <span>&#8505;</span> | Unsere Küche öffnet Montag bis Freitag von
+              17.30h bis 23h, am Wochenende ab 18h.
             </small>
             <small>
-              &#8505; | Unser überdachter und beheizter Freisitz ist bis 23:00
-              Uhr geöffnet
+              <span>&#8505;</span> | Unser überdachter und beheizter Freisitz
+              ist bis 23:00 Uhr geöffnet
             </small>
           </div>
         </div>
@@ -107,12 +120,12 @@
             <span class="chev" :class="{ 'open': open }">▸</span>
           </button>
           <div class="details" x-show="open" x-transition style="display: none">
-            <h2>Mit dem Auto:</h2>
+            <h3>Mit dem Auto</h3>
             <p>
               Anfahrt über die B87 (Lützner Straße) bis Odermannstraße (rechts).
             </p>
 
-            <h2>Mit der TRAM:</h2>
+            <h3>Mit der Tram</h3>
 
             <p>
               <span>Linie 7</span> (Richtung Böhlitz-Ehrenberg) bis Lindenauer
