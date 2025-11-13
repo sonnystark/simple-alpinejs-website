@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Cafe Westen - Das Kult-Café in Leipzig-Lindenau</title>
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Bundled client (created by `bun build src/main.ts --outdir=public/js`) -->
+    <script type="module" src="/js/main.js" defer></script>
+  </head>
+  <body>
+    <img class="logo" src="./assets/img/cafewesten-logo.png" alt="" />
+    <main class="container">
+      <header>
+        <img
+          loading="lazy"
+          src="./assets/img/cafe_westen-scaled-1.jpg"
+          alt=""
+        />
+        <h1>Das Kult-Café am Lindenauer Markt</h1>
+        <p>
+          Weitere Informationen finden Sie auch auf
+          <a href="#" target="_blank">unserer Facebook-Seite</a>.
+        </p>
+        <p>Wir freuen uns auf Euren Besuch!</p>
+      </header>
+      <!-- Alpine directives ONLY for accordion toggles -->
+      <section class="accordion">
+        <div class="item" x-data="{ open: false }">
+          <button
+            class="summary"
+            @click="open = !open"
+            :aria-expanded="open ? 'true' : 'false'"
+          >
+            Veranstaltungen
+            <span class="chev" :class="{ 'open': open }">▸</span>
+          </button>
+          <div class="details" x-show="open" x-transition style="display: none">
+            <h2>Mit dem Auto:</h2>
+            <p>
+              Anfahrt über die B87 (Lützner Straße) bis Odermannstraße (rechts).
+            </p>
+
+            <h2>Mit der TRAM:</h2>
+            <p>
+              Linie 7 (Richtung Böhlitz-Ehrenberg) bis Lindenauer Markt. Linie 8
+              (Richtung Grünau-Nord) bis Lindenauer Markt. Linie 15 (Richtung
+              Miltitz) bis Lindenauer Markt.
+            </p>
+          </div>
+        </div>
+
+        <div class="item" x-data="{ open: false }">
+          <button
+            class="summary"
+            @click="open = !open"
+            :aria-expanded="open ? 'true' : 'false'"
+          >
+            Unsere Speisekarte
+            <span class="chev" :class="{ 'open': open }">▸</span>
+          </button>
+          <div class="details" x-show="open" x-transition style="display: none">
+            <img
+              src="./assets/img/neuer-baecker-webseite-001-1024x724.jpg"
+              alt=""
+            />
+            <img
+              src="./assets/img/neuer-baecker-webseite-002-1024x724.jpg"
+              alt=""
+            />
+          </div>
+        </div>
+
+        <div class="item" x-data="{ open: false }">
+          <button
+            class="summary"
+            @click="open = !open"
+            :aria-expanded="open ? 'true' : 'false'"
+          >
+            Öffnungszeiten
+            <span class="chev" :class="{ 'open': open }">▸</span>
+          </button>
+          <div class="details" x-show="open" x-transition style="display: none">
+            <ul>
+              <li>Montag bis Donnerstag: 17:00 - 03:00 Uhr</li>
+              <li>Freitag: 17:00 - 05:00 Uhr</li>
+              <li>Samstag: 18:00 - 05:00 Uhr</li>
+              <li>Sonntag: 18:00 - 03:00 Uhr</li>
+            </ul>
+            <small>
+              &#8505; | Unsere Küche öffnet Montag bis Freitag von 17.30h bis
+              23h, am Wochenende ab 18h.
+            </small>
+            <small>
+              &#8505; | Unser überdachter und beheizter Freisitz ist bis 23:00
+              Uhr geöffnet
+            </small>
+          </div>
+        </div>
+        <div class="item" x-data="{ open: false }">
+          <button
+            class="summary"
+            @click="open = !open"
+            :aria-expanded="open ? 'true' : 'false'"
+          >
+            Anfahrt
+            <span class="chev" :class="{ 'open': open }">▸</span>
+          </button>
+          <div class="details" x-show="open" x-transition style="display: none">
+            <h2>Mit dem Auto:</h2>
+            <p>
+              Anfahrt über die B87 (Lützner Straße) bis Odermannstraße (rechts).
+            </p>
+
+            <h2>Mit der TRAM:</h2>
+
+            <p>
+              <span>Linie 7</span> (Richtung Böhlitz-Ehrenberg) bis Lindenauer
+              Markt.
+            </p>
+            <p>
+              <span>Linie 8</span> (Richtung Grünau-Nord) bis Lindenauer Markt.
+            </p>
+            <p>
+              <span>Linie 15</span> (Richtung Miltitz) bis Lindenauer Markt.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <address>Café Westen, Demmeringstraße 32, 04177 Leipzig</address>
+      <pre><a href="#">Impressum</a> | <a href="#">Datenschutzerklärung</a></pre>
+    </footer>
+  </body>
+</html>

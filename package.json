@@ -1,0 +1,23 @@
+{
+  "name": "cafe-westen",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "bun build src/main.ts --outdir=public/js --minify --sourcemap",
+    "dev": "bun build src/main.ts --outdir=public/js --watch & bun run start:server",
+    "start": "bun run build && bun run start:server",
+    "start:server": "bun server.js"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "oxlint": "^1.28.0",
+    "prettier": "^3.6.2"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "alpinejs": "^3.15.1"
+  }
+}

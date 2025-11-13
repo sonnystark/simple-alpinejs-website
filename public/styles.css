@@ -1,0 +1,145 @@
+:root {
+  --bg: #111111;
+  --card: #071032;
+  --accent-dark: #a01b1b;
+  --accent-light: #ed7d31;
+  --muted: #94a3b8;
+  --text: #e6eef8;
+  --bg-image: url('./assets/img/Cafe-Westen-in-Leipzig-Lindenau-1536x1152.jpg');
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  height: 100%;
+  height: auto;
+}
+body {
+  margin: 0;
+  font-family:
+    system-ui,
+    -apple-system,
+    Segoe UI,
+    Roboto,
+    'Helvetica Neue',
+    Arial;
+  /*background-color: var(--bg);*/
+  background: top var(--bg) var(--bg-image);
+  background-size: cover;
+  background-attachment: fixed;
+  color: var(--text);
+  padding: 3rem;
+}
+
+.logo {
+  margin: auto;
+  width: 450px;
+  height: auto;
+  display: block;
+  padding-bottom: 2rem;
+  filter: drop-shadow(5px 7px 30px deeppink);
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+h1 {
+  font-size: 2rem;
+  margin: 1rem 0px 1rem 0px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: var(--accent-light);
+  font-weight: bold;
+}
+
+a:hover {
+  color: var(--text);
+}
+
+p:has(span) span {
+  font-weight: bold;
+}
+
+.container {
+  background: rgba(20, 20, 20, 0.75);
+  box-shadow: 1px 1px 60px 2px rgb(255, 20, 147, 0.3);
+  border-radius: 1rem;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.accordion .item {
+  background: rgba(20, 20, 20, 0.82);
+  border: 1px solid var(--accent-dark);
+  margin-bottom: 0.5rem;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.summary {
+  width: 100%;
+  text-align: left;
+  padding: 1rem;
+  border: 0;
+  background: transparent;
+  color: var(--text);
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+.chev {
+  transition: transform 0.2s ease;
+  margin-left: 0.5rem;
+  color: var(--accent-light);
+}
+.chev.open {
+  transform: rotate(90deg);
+}
+.details {
+  padding: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.02);
+  color: var(--muted);
+}
+
+.details ul {
+  list-style: none;
+}
+
+button {
+  font-size: 1.3rem;
+}
+
+footer {
+  color: var(--muted);
+  margin: 2rem auto 0;
+  text-align: center;
+}
+footer pre {
+  margin: 0;
+  display: inline-block;
+  white-space: normal;
+}
+
+address {
+  font-style: normal;
+  text-align: center;
+  font-size: 0.8rem;
+}
