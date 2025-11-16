@@ -89,6 +89,11 @@ p:has(span) span {
   font-weight: bold;
 }
 
+/*ALPINE SPECIFIC BEHAVIORS*/
+[x-cloak] {
+  display: none !important;
+}
+
 /*GLOBAL*/
 html,
 body {

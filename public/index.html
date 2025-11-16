@@ -38,17 +38,33 @@
         </div>
       </section>
       <!-- Alpine directives ONLY for accordion toggles -->
-      <section class="accordion">
-        <div class="item" x-data="{ open: false }">
+      <section
+        class="accordion"
+        x-data="{ open: null }"
+        aria-label="Navigation accordion"
+      >
+        <!--ACCORDION NAVIGATION ITEM 1-->
+        <div class="item">
           <button
+            id="accButton1"
             class="summary"
-            @click="open = !open"
-            :aria-expanded="open ? 'true' : 'false'"
+            @click="open = (open === 1 ? null : 1)"
+            :aria-expanded="open === 1 ? 'true' : 'false'"
+            :aria-controls="'accContent1'"
           >
             Veranstaltungen
-            <span class="chev" :class="{ 'open': open }">▸</span>
+            <span class="chev" :class="{ 'open': open === 1 }">▸</span>
           </button>
-          <div class="details" x-show="open" x-transition style="display: none">
+          <div
+            id="accContent1"
+            class="details"
+            x-show="open === 1"
+            x-transition
+            x-cloak
+            role="region"
+            aria-labelledby="accButton1"
+            style="display: none"
+          >
             <h3>Mit dem Auto</h3>
             <p>
               Anfahrt über die B87 (Lützner Straße) bis Odermannstraße (rechts).
@@ -63,37 +79,63 @@
           </div>
         </div>
 
-        <div class="item" x-data="{ open: false }">
+        <!--ACCORDION NAVIGATION ITEM 2-->
+        <div class="item">
           <button
+            id="accButton2"
             class="summary"
-            @click="open = !open"
-            :aria-expanded="open ? 'true' : 'false'"
+            @click="open = (open === 2 ? null : 2)"
+            :aria-expanded="open === 2 ? 'true' : 'false'"
+            :aria-controls="'accContent2'"
           >
             Unsere Speisekarte
-            <span class="chev" :class="{ 'open': open }">▸</span>
+            <span class="chev" :class="{ 'open': open === 2}">▸</span>
           </button>
-          <div class="details" x-show="open" x-transition style="display: none">
+          <div
+            id="accContent2"
+            class="details"
+            x-show="open === 2"
+            x-transition
+            x-cloak
+            role="region"
+            aria-labelledby="accButton2"
+            style="display: none"
+          >
             <img
+              loading="lazy"
               src="./assets/img/neuer-baecker-webseite-001-1024x724.jpg"
               alt=""
             />
             <img
+              loading="lazy"
               src="./assets/img/neuer-baecker-webseite-002-1024x724.jpg"
               alt=""
             />
           </div>
         </div>
 
-        <div class="item" x-data="{ open: false }">
+        <!--ACCORDION NAVIGATION ITEM 3-->
+        <div class="item">
           <button
+            id="accButton3"
             class="summary"
-            @click="open = !open"
-            :aria-expanded="open ? 'true' : 'false'"
+            @click="open = (open === 3 ? null : 3)"
+            :aria-expanded="open === 3 ? 'true' : 'false'"
+            :aria-controls="'accContent3'"
           >
             Öffnungszeiten
-            <span class="chev" :class="{ 'open': open }">▸</span>
+            <span class="chev" :class="{ 'open': open === 3 }">▸</span>
           </button>
-          <div class="details" x-show="open" x-transition style="display: none">
+          <div
+            id="accContent3"
+            class="details"
+            x-show="open === 3"
+            x-transition
+            x-cloak
+            role="region"
+            aria-labelledby="accButton3"
+            style="display: none"
+          >
             <ul>
               <li>Montag bis Donnerstag: 17:00 - 03:00 Uhr</li>
               <li>Freitag: 17:00 - 05:00 Uhr</li>
@@ -110,16 +152,29 @@
             </small>
           </div>
         </div>
-        <div class="item" x-data="{ open: false }">
+
+        <!--ACCORDION NAVIGATION ITEM 4-->
+        <div class="item">
           <button
+            id="accButton4"
             class="summary"
-            @click="open = !open"
-            :aria-expanded="open ? 'true' : 'false'"
+            @click="open = (open === 4 ? null : 4)"
+            :aria-expanded="open === 4 ? 'true' : 'false'"
+            :aria-controls="'accContent4'"
           >
             Anfahrt
-            <span class="chev" :class="{ 'open': open }">▸</span>
+            <span class="chev" :class="{ 'open': open === 4 }">▸</span>
           </button>
-          <div class="details" x-show="open" x-transition style="display: none">
+          <div
+            id="accContent4"
+            class="details"
+            x-show="open === 4"
+            x-transition
+            x-cloak
+            role="region"
+            aria-labelledby="accButton4"
+            style="display: none"
+          >
             <h3>Mit dem Auto</h3>
             <p>
               Anfahrt über die B87 (Lützner Straße) bis Odermannstraße (rechts).

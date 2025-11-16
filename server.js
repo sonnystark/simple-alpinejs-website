@@ -1,4 +1,3 @@
-// Minimal static file server using Bun.serve
 import { extname } from 'path';
 
 const MIME = {
