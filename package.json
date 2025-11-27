@@ -1,6 +1,6 @@
 {
   "name": "cafe-westen",
-  "module": "index.ts",
+  "module": "src/main.ts",
   "type": "module",
   "private": true,
   "scripts": {
@@ -11,16 +11,14 @@
   },
   "devDependencies": {
     "@types/bun": "latest",
-    "oxlint": "^1.29.0",
-    "prettier": "^3.6.2"
+    "oxlint": "^1.30.0",
+    "prettier": "^3.7.1"
   },
   "peerDependencies": {
     "typescript": "^5.9.3"
   },
   "dependencies": {
-    "@alpinejs/collapse": "^3.15.2",
     "@types/alpinejs": "^3.13.11",
-    "@types/alpinejs__collapse": "^3.13.4",
     "alpinejs": "^3.15.2"
   }
 }
