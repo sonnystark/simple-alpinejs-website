@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="en">
+<html lang="de">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Cafe Westen - Das Kult-Café in Leipzig-Lindenau</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="/styles.css" />
     <script type="module" src="/js/main.js" defer></script>
   </head>
   <body>
@@ -12,7 +12,10 @@
     <main class="container">
       <header>
         <picture>
-          <source srcset="./assets/img/Cafe-Westen-am-Lindenauer-Markt-1536x1152.webp" type="image/webp"">
+          <source
+            srcset="./assets/img/Cafe-Westen-am-Lindenauer-Markt-1536x1152.webp"
+            type="image/webp"
+          />
           <img
             loading="lazy"
             src="./assets/img/Cafe-Westen-am-Lindenauer-Markt-1536x1152.jpg"
@@ -55,7 +58,7 @@
             :aria-expanded="open === 1 ? 'true' : 'false'"
             :aria-controls="'accContent1'"
           >
-            Veranstaltungen
+            Nachrichten
             <span class="chev" :class="{ 'open': open === 1 }">▸</span>
           </button>
           <div
@@ -68,17 +71,14 @@
             aria-labelledby="accButton1"
             style="display: none"
           >
-            <h3>Mit dem Auto</h3>
+            <h3>Info</h3>
             <p>
-              Anfahrt über die B87 (Lützner Straße) bis Odermannstraße (rechts).
+              Liebe Gäste, am Samstag, 22.11.2025 findet im Café eine
+              geschlossene Veranstaltung statt. Danke für Euer Verständnis!
             </p>
 
-            <h3>Mit der Tram</h3>
-            <p>
-              Linie 7 (Richtung Böhlitz-Ehrenberg) bis Lindenauer Markt. Linie 8
-              (Richtung Grünau-Nord) bis Lindenauer Markt. Linie 15 (Richtung
-              Miltitz) bis Lindenauer Markt.
-            </p>
+            <h3>Veranstaltungen</h3>
+            <p>Derzeit ist nichts geplant.</p>
           </div>
         </div>
 
@@ -140,7 +140,7 @@
             style="display: none"
           >
             <ul>
-              <li>Montag bis Donnerstag: 17:00 - 03:00 Uhr</li>
+              <li>Montag - Donnerstag: 17:00 - 03:00 Uhr</li>
               <li>Freitag: 17:00 - 05:00 Uhr</li>
               <li>Samstag: 18:00 - 05:00 Uhr</li>
               <li>Sonntag: 18:00 - 03:00 Uhr</li>
@@ -197,11 +197,63 @@
             </p>
           </div>
         </div>
+        <!--ACCORDION NAVIGATION ITEM 5-->
+        <div class="item">
+          <button
+            id="accButton5"
+            class="summary"
+            @click="open = (open === 5 ? null : 5)"
+            :aria-expanded="open === 5 ? 'true' : 'false'"
+            :aria-controls="'accContent5'"
+          >
+            Tisch Reservieren
+            <span class="chev" :class="{ 'open': open === 5 }">▸</span>
+          </button>
+          <div
+            id="accContent5"
+            class="details"
+            x-show="open === 5"
+            x-transition
+            x-cloak
+            role="region"
+            aria-labelledby="accButton5"
+            style="display: none"
+          >
+            <h3>Reservieren Online</h3>
+            <small>
+              <span>&#8505;</span> | Das Buchungswidget wird von
+              <a
+                href="https://www.quandoo.de/place/cafe-westen-95822/about?locale=de_DE"
+                target="_blank"
+                >Quandoo</a
+              >
+              geladen. Es werden externe Skripte/Anfragen ausgeführt, sobald Sie
+              das Widget laden.
+            </small>
+            <div
+              id="quandoo-booking-widget"
+              class="quandoo-booking-widget"
+              aria-live="polite"
+            ></div>
+
+            <noscript>
+              <p>
+                <a
+                  href="https://www.quandoo.de/restaurant/95822"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  Zur Quandoo-Reservierungsseite öffnen
+                </a>
+              </p>
+            </noscript>
+          </div>
+        </div>
       </section>
     </main>
     <footer>
       <address>Café Westen, Demmeringstraße 32, 04177 Leipzig</address>
-      <pre><a href="#">Impressum</a> | <a href="#">Datenschutzerklärung</a></pre>
+      <pre><a href="/impressum" target="_blank">Impressum</a> | <a href="/datenschutz" target="_blank">Datenschutzerklärung</a></pre>
     </footer>
   </body>
 </html>

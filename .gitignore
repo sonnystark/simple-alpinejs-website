@@ -1,6 +1,10 @@
 # dependencies (bun install)
 node_modules
 
+# bundle
+/public/js/*.js
+/public/js/*.js.map
+
 # output
 out
 dist
